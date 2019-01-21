@@ -1,4 +1,5 @@
 using StatsBase, Statistics
+export normal_deviate
 
 """Generates n normal deviates with mean mu and standard
 deviation sigma."""
@@ -20,7 +21,3 @@ function normal_deviate(mu::T, sigma::T, n::Int) where T <: Real
   x = sigma .* x .+ mu
   return x[1:n]
 end
-
-(mu, sigma, n) = (1.0, 2.0, 100000);
-x = normal_deviate(mu, sigma, n);
-describe(x)
