@@ -1,4 +1,5 @@
 using Statistics
+export uniform_deviate
 
 """Generates uniform random deviates on the interval (0,1)."""
 function uniform_deviate(seed::Vector{Int})
@@ -9,11 +10,3 @@ function uniform_deviate(seed::Vector{Int})
   u = seed ./ prime
   return mod(sum(u), 1)
 end
-
-(n, seed) = (100000, [20761807, 58933051]);
-x = zeros(n);
-for i = 1:n
-  x[i] = uniform_deviate(seed)
-end
-println(2 * mean(x), "  ", 12 * var(x)) 
-describe(x)
