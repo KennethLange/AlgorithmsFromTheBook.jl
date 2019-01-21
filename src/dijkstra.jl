@@ -1,5 +1,5 @@
-using DataStructures
-import DataStructures: PriorityQueue
+import DataStructures: dequeue!, peek, PriorityQueue
+export adjacency_to_neighborhood, dijkstra
 
 """Implements Dykstra's algorithm for finding the shortest path
 from a source node to every other node of a directed graph. 
@@ -50,9 +50,3 @@ function adjacency_to_neighborhood(A::Matrix)
   end
   return (neighbor, weight)
 end
-
-A = [[ 0 7 9 0 0 14]; [ 7 0 10 15 0 0]; [ 9 10 0 11 0 2];
-[ 0 15 11 0 6 0]; [ 0 0 0 6 0 9]; [ 14 0 2 0 9 0]]; 
-(neighbor, weight) = adjacency_to_neighborhood(A);
-(distance, predecessor) = dijkstra(neighbor, weight, 1) 
- 
