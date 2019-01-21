@@ -1,0 +1,15 @@
+name = "AlgorithmsFromTheBook"
+uuid = "628264c5-7e14-5233-be68-46f57bdd73bf"
+keywords = ["algorithms"]
+author = ["Kenneth Lange <klange@ucla.edu>", "Hua Zhou <huazhou@ucla.edu"]
+version = "0.0.1"
+
+[deps]
+
+[compat]
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
