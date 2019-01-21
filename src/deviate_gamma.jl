@@ -1,4 +1,5 @@
 using StatsBase, Statistics
+export gamma_deviate
 
 """Generates n gamma deviates with shape parameter alpha
 and intensity lambda."""
@@ -28,7 +29,3 @@ function gamma_deviate(alpha::T, lambda::T, n::Int) where T <: Real
   end
   return x
 end
-
-(alpha, lambda, n) = (3.5, 2.0, 10000);
-x = gamma_deviate(alpha, lambda, n);
-println(lambda * mean(x) / alpha, "  ", lambda^2 * var(x) / alpha)
