@@ -1,3 +1,5 @@
+export archimedes
+
 """ Computes pi."""
 function archimedes(n::Integer)
   (a, b) = (4.0, 4.0 / sqrt(2.0))
@@ -8,5 +10,4 @@ function archimedes(n::Integer)
   return (a, b)
 end
 
-(upper, lower) = archimedes(20)
 
