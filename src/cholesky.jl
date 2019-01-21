@@ -1,3 +1,6 @@
+using LinearAlgebra
+export cholesky, choleskysolve
+
 """Extracts the Cholesky decomposition L of the symmetric positive
 definite matrix A. The lower triangle of A is overwritten."""
 function cholesky(A::Matrix{T}) where T <: Real
@@ -31,14 +34,3 @@ function choleskysolve(L::Matrix{T}, b::Vector{T}) where T <: Real
   end
   return x
 end
-
-using LinearAlgebra
-n = 100;
-M = randn(n, n);
-A = M * M';
-Asave = copy(A);
-b = randn(n);
-bsave = copy(b);
-L = cholesky(A);
-x = choleskysolve(L, b);
-norm(bsave - Asave * x)

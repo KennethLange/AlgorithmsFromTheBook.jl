@@ -8,5 +8,6 @@ include("archimedes.jl")
 include("babylonian.jl")
 include("binarysearch.jl")
 include("bisect.jl")
+include("cholesky.jl")
 
 end
