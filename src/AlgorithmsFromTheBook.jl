@@ -13,5 +13,6 @@ include("conjugategradients.jl")
 include("connect.jl")
 include("convolve.jl")
 include("cosine_min.jl")
+include("deviate_discrete.jl")
 
 end

@@ -1,4 +1,5 @@
 using StatsBase, Statistics, LinearAlgebra
+export discrete_deviate
 
 """Generates n random deviates according a given mass distribution."""
 function discrete_deviate(mass::Vector{T}, n::Int) where T <: Real
@@ -18,10 +19,4 @@ function discrete_deviate(mass::Vector{T}, n::Int) where T <: Real
   end
   return x
 end
-
-(categories, n) = (5, 10000)
-mass = rand(categories);
-x = discrete_deviate(mass, n);
-describe(x)
-m = dot([i for i =1:categories], mass / sum(mass)) # match means
 
