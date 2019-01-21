@@ -1,3 +1,5 @@
+export binary_search
+
 """ Conducts a binary search for the given value in the 
 ordered list x."""
 function binary_search(x::Vector, value)
@@ -15,8 +17,3 @@ function binary_search(x::Vector, value)
   end     
   return 0
 end
-
-x = ['a', 'b', 'd', 'f', 'g'];
-println(binary_search(x, 'f'))
-x = [1, 2, 4, 7, 9];
-println(binary_search(x, 3))
