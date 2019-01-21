@@ -1,9 +1,9 @@
-using Statistics, SpecialFunctions
+export zipf_deviate
 
 """Generates n random deviates from the Zipf(s) distribution."""
 function zipf_deviate(s::T, n::Int) where T <: Real
   x = zeros(Int, n);
-  r = one(T) /(one(T) - s)
+  r = one(T) / (one(T) - s)
   c = s / (s - one(T))
   y = zero(T)
   for i = 1:n
@@ -23,9 +23,3 @@ function zipf_deviate(s::T, n::Int) where T <: Real
   end
   return x
 end
-
-(s, n) = (5.0, 10000);
-x = zipf_deviate(s, n);
-avg = zeta(s - 1.0) / zeta(s) # theoretical mean
-v = zeta(s - 2.0) / zeta(s) - avg^2 # theoretical variance
-println("mean ratio = ",mean(x) / avg," var ratio = ", var(x) / v)

@@ -1,4 +1,3 @@
-using StatsBase, Statistics, LinearAlgebra
 export discrete_deviate
 
 """Generates n random deviates according a given mass distribution."""

@@ -18,5 +18,6 @@ include("deviate_gamma.jl")
 include("deviate_normal.jl")
 include("deviate_poisson.jl")
 include("deviate_uniform.jl")
+include("deviate_zipf.jl")
 
 end

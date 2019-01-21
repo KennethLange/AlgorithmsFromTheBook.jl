@@ -1,4 +1,3 @@
-using StatsBase, Statistics
 export gamma_deviate
 
 """Generates n gamma deviates with shape parameter alpha

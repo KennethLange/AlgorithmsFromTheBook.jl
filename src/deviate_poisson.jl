@@ -1,4 +1,3 @@
-using StatsBase, Statistics
 export poisson_deviate
 
 """Generates Poisson random deviates with mean mu."""

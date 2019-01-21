@@ -1,4 +1,3 @@
-using Statistics
 export uniform_deviate
 
 """Generates uniform random deviates on the interval (0,1)."""

@@ -1,4 +1,3 @@
-using StatsBase, Statistics
 export normal_deviate
 
 """Generates n normal deviates with mean mu and standard
