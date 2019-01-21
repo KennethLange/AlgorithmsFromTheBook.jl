@@ -1,3 +1,5 @@
+using LinearAlgebra, SparseArrays
+export conjugategradients
 
 """ Solves the equation A*x = b by the conjugate gradient method. 
 The matrix A is assumed positive definite; tol is tolerance for 
@@ -32,15 +34,3 @@ function conjugategradients(A::SparseMatrixCSC{T, Int},
     return x
   end
 end
-
-using LinearAlgebra
-using SparseArrays
-n = 100;
-A = sprandn(n, n, .01);
-rho = opnorm(A, 1);
-A = 0.5*(A + A') + rho * I;
-x = randn(n);
-b = A * x;
-tol = 1e-5;
-y = conjugategradients(A, b, tol);
-norm(x - y)
