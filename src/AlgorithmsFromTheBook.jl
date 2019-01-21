@@ -10,5 +10,6 @@ include("binarysearch.jl")
 include("bisect.jl")
 include("cholesky.jl")
 include("conjugategradients.jl")
+include("connect.jl")
 
 end

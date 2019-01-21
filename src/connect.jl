@@ -1,3 +1,5 @@
+export adjacency_to_neighborhood, connect
+
 """Finds the connected components of a graph.  Nodes should be 
 numbered 1,2,..."""
 function connect(neighbor::Array{Array{Int, 1}, 1})
@@ -41,9 +43,3 @@ function adjacency_to_neighborhood(A::Matrix)
   end
   return (neighbor, weight)
 end
-
-A = [[ 0 1 1 0 0 0 0]; [ 1 0 1 0 0 0 0]; [ 1 1 0 0 0 0 0];
-[ 0 0 0 0 1 1 0]; [ 0 0 0 1 0 1 0]; [ 0 0 0 1 1 0 0];
-[ 0 0 0 0 0 0 0]]; 
-(neighbor, weight) = adjacency_to_neighborhood(A);
-(component, components) = connect(neighbor)
