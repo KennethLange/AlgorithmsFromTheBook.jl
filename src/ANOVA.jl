@@ -1,3 +1,5 @@
+export MM_ANOVA
+
 """Estimates ANOVA parameters with no missing data."""
 function two_way_ANOVA(Y::Array{T, 3}) where T <: Real
   (i, j, k) = size(Y)
@@ -38,20 +40,6 @@ function MM_ANOVA(Y::Array{T, 3}, W::Array{T, 3}) where T <: Real
   end
   return (mu, alpha, beta)
 end
-
-Y = zeros(3, 2, 4);
-Y[:, :, 1] = [1 2; 3 4; 5 6];
-Y[:, :, 2] = -Y[:, :, 1];
-Y[:, :, 3] = Y[:, :, 1] / 2; 
-Y[:, :, 4] = -Y[:,:,1] / 2; 
-W = ones(size(Y));
-W[1, 1, 1] = 0.0;
-W[3, 2, 4] = 0.0;
-(mu, alpha, beta) = MM_ANOVA(Y, W);
-println("mu = ",mu);
-println("alpha = ",alpha);
-println("beta = ",beta);
-
 
 
   
