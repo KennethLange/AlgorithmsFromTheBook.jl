@@ -1,3 +1,5 @@
+export cosine_min
+
 """Minimizes cos(x) by an MM algorithm and Newwton's method."""
 function cosine_min(x)
   y = copy(x)
@@ -8,6 +10,3 @@ function cosine_min(x)
   end
   return (x, y)
 end
-
-x = 2.0
-(x, y) = cosine_min(x)
