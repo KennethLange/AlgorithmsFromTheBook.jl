@@ -1,3 +1,5 @@
+export babylonian
+
 """ Computes the square root of c >= 0."""
 function babylonian(c::T, tol::T) where T <: Real
   x = one(T)  # start x at 1
@@ -10,5 +12,4 @@ function babylonian(c::T, tol::T) where T <: Real
   end
 end
 
-root = babylonian(pi^2, 1e-10)
 
