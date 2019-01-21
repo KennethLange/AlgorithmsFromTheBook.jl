@@ -11,5 +11,6 @@ include("bisect.jl")
 include("cholesky.jl")
 include("conjugategradients.jl")
 include("connect.jl")
+include("convolve.jl")
 
 end

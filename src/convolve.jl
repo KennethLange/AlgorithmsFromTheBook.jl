@@ -1,4 +1,5 @@
 using FFTW
+export convolve, fftconvolve
 
 """Computes the convolution of the sequences a and b naively."""
 function convolve(a::Vector{T}, b::Vector{T}) where T <: Real
@@ -25,9 +26,3 @@ function fftconvolve(a::Vector{T}, b::Vector{T}) where T <: Real
    d = fft(d) 
    return ifft(c .* d)
 end
-
-a = [1, 2, 1];
-b = [1, 3, 2, 1];
-c1 = convolve(a, b);
-println(c1);
-c2 = real(fftconvolve(a, b))
