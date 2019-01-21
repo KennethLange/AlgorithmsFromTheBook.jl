@@ -1,4 +1,5 @@
 using StatsBase, Statistics
+export poisson_deviate
 
 """Generates Poisson random deviates with mean mu."""
 function poisson_deviate(mu::T, n::Int) where T <: Real
@@ -22,8 +23,3 @@ function poisson_deviate(mu::T, n::Int) where T <: Real
   end
   return x
 end
-
-(mu, n) = (2.0, 10000);
-x = poisson_deviate(mu, n);
-describe(x)
-var(x)

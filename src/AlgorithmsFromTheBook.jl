@@ -16,5 +16,6 @@ include("cosine_min.jl")
 include("deviate_discrete.jl")
 include("deviate_gamma.jl")
 include("deviate_normal.jl")
+include("deviate_poisson.jl")
 
 end
