@@ -1,3 +1,6 @@
+using LinearAlgebra
+export gram_schmidt, least_squares
+
 """Finds the QR decomposition of X. X should have more rows 
 than columns."""
 function gram_schmidt(X::Matrix{T}) where T <: Real
@@ -29,10 +32,3 @@ function least_squares(X::Matrix{T}, y::Vector{T}) where T <: Real
   end
   return beta
 end
-
-using LinearAlgebra
-(n, p) = (100, 20);
-X = randn(n, p);
-y = randn(n);
-beta = least_squares(X, y)
-norm(beta - X \ y)
