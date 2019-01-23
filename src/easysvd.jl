@@ -1,3 +1,5 @@
+export easysvd
+
 """Extracts the svd of the matrix A."""
 function easysvd(A::Matrix{T}) where T <: Real
   (m, n) = size(A)
@@ -6,9 +8,3 @@ function easysvd(A::Matrix{T}) where T <: Real
   c = sqrt(2 * one(T))
   return (c * V[n + 1:end, 1:n] , D[1:n], c * V[1:n, 1:n])
 end
-
-using LinearAlgebra
-(m, n) = (30, 20);
-A = randn(m, n);
-(U, S, V) = easysvd(A);
-println(norm(A - U * Diagonal(S) * V'))
