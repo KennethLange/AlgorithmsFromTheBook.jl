@@ -1,3 +1,5 @@
+export householder, householder_qr, householder_qr
+
 """Constructs a Householder transformation P = I - c u u^t
 that maps x into ||x|| e_1."""
 function householder(x::Vector{T}) where T <: Real
@@ -32,10 +34,3 @@ function householder_qr(A::Matrix{T}) where T <: Real
   end
   return(Q, R)
 end
-
-using LinearAlgebra
-(m, n) = (100, 200);
-A = randn(m, n);
-(Q, R) = householder_qr(A);
-opnorm(A - Q * R, 2)
-opnorm(Q' * Q - I, 2)

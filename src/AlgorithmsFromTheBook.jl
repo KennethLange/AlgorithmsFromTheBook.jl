@@ -30,5 +30,6 @@ include("fft.jl")
 include("gauss.jl")
 include("gram_schmidt.jl")
 include("heapsort.jl")
+include("householder.jl")
 
 end
