@@ -1,3 +1,5 @@
+export eratosthenes
+
 """Delivers all primes <= n."""
 function eratosthenes(n::Integer)
   isprime = ones(Bool, n)
@@ -12,5 +14,4 @@ function eratosthenes(n::Integer)
   return filter(x -> isprime[x], 1:n)
 end
 
-prime_list = eratosthenes(100)
 
