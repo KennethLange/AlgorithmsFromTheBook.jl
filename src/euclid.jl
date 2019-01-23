@@ -1,3 +1,5 @@
+export euclid
+
 """ Computes the greatest common divisor of c and d. """
 function euclid(m::T, n::T) where T <: Integer
   (a, b) = (m, n)
@@ -7,4 +9,3 @@ function euclid(m::T, n::T) where T <: Integer
   return a
 end
 
-gcd = euclid(600, 220)
