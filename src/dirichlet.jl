@@ -1,3 +1,6 @@
+using Roots, SpecialFunctions, Statistics
+export dirichlet
+
 """Finds the maximum likelihood estimates of the parameters 
 of the Dirichlet distribution."""
 function dirichlet(X::Matrix{T}) where T <: Real
@@ -18,12 +21,3 @@ function dirichlet(X::Matrix{T}) where T <: Real
   return lambda
 end 
 
-using Roots, Distributions, Statistics
-using LinearAlgebra, SpecialFunctions
-(n, p) = (1000, 3);
-lambda = 5 * rand(p);
-X = rand(Dirichlet(lambda), n);
-lambda = fit_mle(Dirichlet, X);
-println("Package estimated parameters = ",lambda);
-lambda = dirichlet(X);
-println("Direct estimated parameters = ",lambda);

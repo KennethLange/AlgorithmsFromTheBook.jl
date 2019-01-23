@@ -1,6 +1,5 @@
 module ZipfDeviateTest
 
-import Pkg; Pkg.add("SpecialFunctions")
 using AlgorithmsFromTheBook, Random, SpecialFunctions, Statistics, Test
 
 @testset "Zipf rv" begin
