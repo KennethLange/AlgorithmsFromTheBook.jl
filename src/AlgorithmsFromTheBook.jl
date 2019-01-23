@@ -27,5 +27,6 @@ include("eratosthenes.jl")
 include("euclid.jl")
 include("fastlog.jl")
 include("fft.jl")
+include("gauss.jl")
 
 end

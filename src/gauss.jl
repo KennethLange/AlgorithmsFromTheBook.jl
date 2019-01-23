@@ -1,3 +1,5 @@
+export LUdecomposition, LUsolve, inverse
+
 """Overwrites the LU decomposition of A in A. Partial pivoting
 is performed to enhance numerical stability."""
 function LUdecomposition(A::Matrix{T}) where T <: Real
@@ -56,10 +58,3 @@ function inverse(A::Matrix{T}) where T <: Real
   end
   return C
 end
-
-using LinearAlgebra
-n = 100;
-A = randn(n, n);
-Asave = copy(A);
-C = inverse(A);
-norm(Asave*C - I, 2)
