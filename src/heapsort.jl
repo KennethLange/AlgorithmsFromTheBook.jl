@@ -1,3 +1,5 @@
+export heapsort, siftdown
+
 """Sorts the input list x from least to greatest by heapsort."""
 function heapsort(x::Vector)
   n = length(x)
@@ -28,10 +30,3 @@ function siftdown(x::Vector, parent::Int, bottom::Int)
   end
   x[div(child, 2)] = parent_value
 end
-
-x = [5, 4, 3, 1, 2, 8, 7, 6, -1];
-heapsort(x)
-println(x)
-x = ['a', 'c', 'd', 'b', 'f', 'e', 'h', 'g', 'y'];
-heapsort(x)
-println(x)

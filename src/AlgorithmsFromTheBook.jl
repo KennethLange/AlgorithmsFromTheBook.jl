@@ -29,5 +29,6 @@ include("fastlog.jl")
 include("fft.jl")
 include("gauss.jl")
 include("gram_schmidt.jl")
+include("heapsort.jl")
 
 end
