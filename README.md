@@ -13,9 +13,9 @@ Pkg.clone("https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git")
 For example, to test the Peasant Multiplication algorithm in Chapter 1,   
 ```julia
 using AlgorithmsFromTheBook  
-c = peasantproduct(10, 33)
+gcd = euclid(600, 220)
 ```
 To read the source code of a function,   
 ```julia
-@edit peasantproduct(10, 33)
+@edit euclid(600, 220)
 ```
