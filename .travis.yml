@@ -18,7 +18,7 @@ git:
 
 before_script: # install dependent unregistered packages
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git"));'
+  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git", rev="master"));'
 after_script:  # TODO: change to after_success once https://github.com/JuliaLang/julia/issues/28306 is fixed
   # push coverage results to Codecov and Coveralls
   - julia -e 'using AlgorithmsFromTheBook; cd(joinpath(dirname(pathof(AlgorithmsFromTheBook)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
