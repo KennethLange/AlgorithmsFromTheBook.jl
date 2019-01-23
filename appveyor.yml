@@ -29,8 +29,6 @@ install:
   - ps: iex ((new-object net.webclient).DownloadString("https://raw.githubusercontent.com/JuliaCI/Appveyor.jl/version-1/bin/install.ps1"))
 
 build_script:
-  - echo "install SnpArrays and PolrModels"
-  - C:\julia\bin\julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git\", rev=\"master\"));"
   - echo "%JL_BUILD_SCRIPT%"
   - C:\julia\bin\julia -e "%JL_BUILD_SCRIPT%"
 
