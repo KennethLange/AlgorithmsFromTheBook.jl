@@ -1,7 +1,7 @@
 # AlgorithmsFromTheBook.jl
 
 | **Build Status** | **Code Coverage**  |
-|-------------------|------------------|--------------------|
+|------------------|--------------------|
 | [![Build Status](https://travis-ci.org/Hua-Zhou/AlgorithmsFromTheBook.jl.svg?branch=master)](https://travis-ci.org/Hua-Zhou/AlgorithmsFromTheBook.jl) [![Build status](https://ci.appveyor.com/api/projects/status/up3skeku37b0vyyf/branch/master?svg=true)](https://ci.appveyor.com/project/Hua-Zhou/algorithmsfromthebook-jl/branch/master) | [![Coverage Status](https://coveralls.io/repos/github/Hua-Zhou/AlgorithmsFromTheBook.jl/badge.svg?branch=master)](https://coveralls.io/github/Hua-Zhou/AlgorithmsFromTheBook.jl?branch=master) [![codecov](https://codecov.io/gh/Hua-Zhou/AlgorithmsFromTheBook.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/Hua-Zhou/AlgorithmsFromTheBook.jl) |  
 
 
