@@ -8,10 +8,14 @@ n = 50;
 X = rand(2, n);
 dist = pairwise(Euclidean(), X);
 (cost, path) = anneal(dist)
-@test cost ≈ 5.67922190
-@test all(path .== [50, 38, 24, 28, 35, 48, 13, 47, 17, 40, 12, 3, 31, 22, 16, 15, 14, 
-    44, 34, 43, 1, 19, 37, 39, 41, 25, 7, 46, 27, 30, 42, 2, 49, 33, 45, 11, 20, 
-    10, 21, 36, 4, 18, 5, 32, 26, 23, 29, 9, 8, 6])
+cost0 = dist[size(dist, 1), 1]
+cost1 = dist[path[size(dist, 1)], path[1]]
+for i in 2:size(dist, 1)
+    cost0 += dist[i - 1, i]
+    cost1 += dist[path[i - 1], path[i]]
+end
+@test cost < cost0
+@test cost ≈ cost1
 end
 
 end

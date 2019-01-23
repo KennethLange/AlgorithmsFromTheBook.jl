@@ -1,4 +1,4 @@
-using Distances, Random
+using Random
 export anneal
 
 """Solves traveling salesman problem by simulated annealing."""
