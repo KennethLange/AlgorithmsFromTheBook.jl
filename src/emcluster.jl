@@ -1,4 +1,5 @@
 using Distances, Statistics, LinearAlgebra
+export kmeans, emcluster
 
 """Implements kmeans clustering. The variable class should enter
 with an initial guess of the classifications."""
@@ -80,15 +81,4 @@ function emcluster(X::Matrix{T}, class::Vector{Int},
     old_loglikelihood = loglikelihood
   end
   return assign
-end
-
-k = 3;
-X = randn(100, 300);
-X[:, 101:200] = X[:, 101:200] .+ 0.25;
-X[:, 201:300] = X[:, 201:300] .+ 0.50;
-guess = rand(1:k, 300);
-(class, center) = kmeans(X, guess, k);
-assign = emcluster(X, class, 1e-6);
-for i = 1:300
-  println(" kmeans class = ",class[i]," postprob = ", assign[i,:])
 end

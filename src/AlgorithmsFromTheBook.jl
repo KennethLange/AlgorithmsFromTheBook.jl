@@ -22,5 +22,6 @@ include("deviate_zipf.jl")
 include("dijkstra.jl")
 include("dirichlet.jl")
 include("easysvd.jl")
+include("emcluster.jl")
 
 end
