@@ -33,5 +33,6 @@ include("heapsort.jl")
 include("householder.jl")
 include("jacobi.jl")
 include("kmeans.jl")
+include("knn.jl")
 
 end

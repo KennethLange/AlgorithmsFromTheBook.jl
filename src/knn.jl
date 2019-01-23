@@ -1,4 +1,5 @@
-using Distances, Statistics
+using Distances, Statistics, StatsBase
+export knn
 
 """Performs k nearest neighbor classification with training data
 Y. The classes should be numbered 1, 2,...""" 
@@ -14,10 +15,3 @@ function knn(X::Matrix{T}, Y::Matrix{T}, class::Vector{Int},
   end
   return predicted_class
 end
-
-(training, testing, features) = (100, 10, 30);
-X = randn(features, testing);
-Y = randn(features, training);
-(k, classes) = (3, 2);
-class = rand(1:classes, training);
-predicted_class = knn(X, Y, class, k)
