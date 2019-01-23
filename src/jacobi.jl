@@ -1,3 +1,7 @@
+using LinearAlgebra, DataStructures
+import DataStructures: PriorityQueue, peek
+export jacobi_rotation, jacobi
+
 """Constructs a rotation that zeros out the offdiagonal 
 entry b of a 2 x 2 symmetric matrix."""
 function jacobi_rotation(a::T, b::T, c::T) where T <: Real
@@ -60,17 +64,6 @@ function jacobi(M::Matrix{T}, tol::T) where T <: Real
   end
   return (diag(M), eigenvector)
 end
-
-using LinearAlgebra, DataStructures
-import DataStructures: PriorityQueue, peek
-n = 100;
-M = randn(n, n);
-M = M + M';
-Msave = copy(M);
-tol = 1e-12;
-(eigenvalue, eigenvector) = jacobi(M, tol);
-opnorm(Msave * eigenvector - eigenvector * Diagonal(eigenvalue), 2)
-
 
 
 
