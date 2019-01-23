@@ -25,5 +25,6 @@ include("easysvd.jl")
 include("emcluster.jl")
 include("eratosthenes.jl")
 include("euclid.jl")
+include("fastlog.jl")
 
 end
