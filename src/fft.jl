@@ -1,4 +1,4 @@
-using LinearAlgebra
+export FFT
 
 """Computes the fast Fourier transform of the vector f. ln is the log 
 base 2 of the number n of entries of f.  Set invert equal to true for 
@@ -38,12 +38,3 @@ function FFT(f::Vector{T}, ln::Int, invert::Bool) where T <: Complex
   if invert; f = f / n; end
   return f
 end
-
-ln = 4;
-n = 2^ln;
-f = randn(n);
-f = f .+ 0.0*im;
-g = copy(f);
-f = FFT(f, ln, false);
-f = FFT(f, ln, true);
-println(norm(f - g))
