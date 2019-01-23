@@ -34,9 +34,8 @@ function dijkstra(neighbor::Array{Array{Int, 1}, 1},
   return (distance, predecessor)
 end
 
-"""Collects neighborhoods and weights from an adjacency matrix A."""
+#= """Collects neighborhoods and weights from an adjacency matrix A."""
 function adjacency_to_neighborhood(A::Matrix)
-#
   (nodes, T) = (size(A, 1), eltype(A))
   neighbor = [Vector{Int}() for i = 1:nodes]
   weight = [Vector{T}() for i = 1:nodes]
@@ -49,4 +48,4 @@ function adjacency_to_neighborhood(A::Matrix)
     end
   end
   return (neighbor, weight)
-end
+end =#
