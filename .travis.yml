@@ -18,4 +18,4 @@ git:
 
 after_script:  # TODO: change to after_success once https://github.com/JuliaLang/julia/issues/28306 is fixed
   # push coverage results to Codecov and Coveralls
-  - julia -e 'using AlgorithmsFromTheBook; cd(joinpath(dirname(pathof(AlgorithmsFromTheBook)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
+  - julia -e 'using Pkg, AlgorithmsFromTheBook; cd(joinpath(dirname(pathof(AlgorithmsFromTheBook)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
