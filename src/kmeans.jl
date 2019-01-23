@@ -1,4 +1,5 @@
 using Distances
+export kmeans
 
 """Implements kmeans clustering. The variable class should enter
 with an initial guess of the classifications."""
@@ -31,11 +32,3 @@ function kmeans(X::Matrix{T}, class::Vector{Int},
   end 
   return (class, center)
 end
-
-k = 3;
-X = randn(100, 300);
-X[:, 101:200] = X[:, 101:200] .+ 1.0; 
-X[:, 201:300] = X[:, 201:300] .+ 2.0; 
-class = rand(1:k, 300); # k classes randomly assigned
-(class, center) = kmeans(X, class, k);
-println(class)

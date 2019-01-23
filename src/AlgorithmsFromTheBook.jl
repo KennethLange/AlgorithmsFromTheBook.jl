@@ -32,5 +32,6 @@ include("gram_schmidt.jl")
 include("heapsort.jl")
 include("householder.jl")
 include("jacobi.jl")
+include("kmeans.jl")
 
 end
