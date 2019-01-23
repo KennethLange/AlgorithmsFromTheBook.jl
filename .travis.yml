@@ -1,0 +1,24 @@
+## Documentation: http://docs.travis-ci.com/user/languages/julia/
+language: julia
+sudo: required
+os:
+  - linux
+  - osx
+julia:
+  - 1.0
+  - 1.1
+  - nightly
+matrix:
+  allow_failures:
+    - julia: nightly  
+notifications:
+  email: false
+git:
+  depth: 99999999
+
+before_script: # install dependent unregistered packages
+  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git"));'
+after_script:  # TODO: change to after_success once https://github.com/JuliaLang/julia/issues/28306 is fixed
+  # push coverage results to Codecov and Coveralls
+  - julia -e 'using AlgorithmsFromTheBook; cd(joinpath(dirname(pathof(AlgorithmsFromTheBook)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
