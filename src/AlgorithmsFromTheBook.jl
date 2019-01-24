@@ -44,5 +44,6 @@ include("newton.jl")
 include("nmf.jl")
 include("pagerank.jl")
 include("peasantproduct.jl")
+include("perfectpower.jl")
 
 end
