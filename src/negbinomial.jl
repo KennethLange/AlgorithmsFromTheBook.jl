@@ -1,3 +1,5 @@
+export negbinomial
+
 """Estimates both parameters of the negative binomial 
 distribution."""
 function negbinomial(x::Vector{Int})
@@ -21,15 +23,3 @@ function negbinomial(x::Vector{Int})
   end
   return (p, r)   
 end
-
-using Distributions;
-(n, r, p) = (100, 5., .25);
-x = rand(NegativeBinomial(r, p), n);
-(p, r) = negbinomial(x);
-obj = loglikelihood(NegativeBinomial(r, p), x);
-println("r = ",r," p = ",p," obj = ",obj);
-(avg, ssq) = (mean(x), var(x));
-(p, r) = (avg / ssq, avg^2 / (ssq - avg));
-obj = loglikelihood(NegativeBinomial(r, p), x);
-println("r = ",r," p = ",p," obj = ",obj);
-

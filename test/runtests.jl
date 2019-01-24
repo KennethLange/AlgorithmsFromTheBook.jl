@@ -35,4 +35,5 @@ include("mcda_test.jl")
 include("mcmc_coal_test.jl")
 include("mcmc_hardcore_test.jl")
 include("naiveBayes_test.jl")
+include("negbinomial_test.jl")
 

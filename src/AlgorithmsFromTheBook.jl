@@ -39,5 +39,6 @@ include("mcda.jl")
 include("mcmc_coal.jl")
 include("mcmc_hardcore.jl")
 include("naiveBayes.jl")
+include("negbinomial.jl")
 
 end
