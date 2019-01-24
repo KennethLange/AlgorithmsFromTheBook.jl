@@ -51,5 +51,6 @@ include("prime_test.jl")
 include("quadratic.jl")
 include("quickselect.jl")
 include("quicksort.jl")
+include("rayleigh.jl")
 
 end

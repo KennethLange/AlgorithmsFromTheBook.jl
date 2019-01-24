@@ -1,3 +1,6 @@
+using LinearAlgebra
+export rayleigh, power_method
+
 """Finds an eigenvalue and corresponding eigenvector close
 to the initial vector v."""
 function rayleigh(A::Matrix{T}, v::Vector{T}, tol::T) where T <: Real
@@ -18,19 +21,11 @@ end
 
 """Approximates the dominant eigenvector of A."""
 function power_method(A::Matrix{T}) where T <: Real
-  v = randn(n);
+  v = randn(size(A, 1));
   for i = 1:100 
     v = A * v
     v = v / norm(v)
   end
   return v
 end
-
-using LinearAlgebra
-(n, tol) = (100, 1e-10)
-A = randn(n, n);
-A = A + A';
-v = power_method(A);
-(mu, v) = rayleigh(A, v, tol); # improve the power estimate
-println("error = ",norm(A * v - mu * v)," mu = ",mu)
 
