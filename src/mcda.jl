@@ -1,11 +1,10 @@
-using DecisionTree, LinearAlgebra, SparseArrays
+using LinearAlgebra, SparseArrays
+export mcda
 
 """Performs matrix completion discriminant analysis. M is the sparse
 predictor matrix. Missing entries of class are coded as 0."""
 function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int}, 
   classes::Int, r::Int, epsilon::T) where T <: Real
-#
-  T = eltype(epsilon)
   (cases, features) = size(M)
   vertex = zeros(T, classes, classes - 1)
   (b, c, d) = (classes - 1, sqrt(classes), sqrt(classes - 1))
@@ -37,8 +36,8 @@ function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int},
       (j, k) = i.I
       R[i] = Y[i] - dot(U[j, :], V[:, k])
     end
-    T = (V * V' + epsilon * I) \ V # update U
-    U = R * T' + U * (V * T')
+    M = (V * V' + epsilon * I) \ V # update U
+    U = R * M' + U * (V * M')
     loss = sum(abs2, R) # check for convergence
     if abs(old_loss - loss) < (old_loss + 1.0) * tol
       break
@@ -58,46 +57,3 @@ function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int},
   end
   return assigned
 end
-
-"""Prepares Fisher's Iris data for analysis."""
-function analyze_iris_data(epsilon::T, missing_rate::T,
-  classes::Int) where T <: Real
-#
-  (features, labels) = load_data("iris")  # data input Array{Any}
-  M = float.(features)
-  label = string.(labels)
-  cases = size(M, 1)
-  class = zeros(Int, cases)
-  for i = 1:cases
-    if label[i] == "Iris-setosa"
-      class[i] = 1
-    elseif label[i] == "Iris-versicolor"
-      class[i] = 2
-    elseif label[i] == "Iris-virginica"
-      class[i] = 3
-    else
-      println("failed label")
-    end
-  end
-  for i in eachindex(M) # randomly delete features
-    if rand() < missing_rate
-      M[i] = 0.0
-    end
-  end
-  M = sparse(M)
-  deletedclass = copy(class)
-  for i = 1:cases # randomly delete classes
-    if rand() < missing_rate
-      deletedclass[i] = 0
-    end
-  end
-  for r = 1:6 # run MCDA
-    imputedclass = mcda(M, deletedclass, classes, r, epsilon);
-    errors = count(class - imputedclass != 0);
-    println("rank = ",r," classification_errors = ", errors)
-  end
-  return nothing
-end
-
-(classes, epsilon, missing_rate) = (3, 1e-5, 0.25);
-analyze_iris_data(epsilon, missing_rate, classes) 

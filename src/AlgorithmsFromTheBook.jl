@@ -35,5 +35,6 @@ include("jacobi.jl")
 include("kmeans.jl")
 include("knn.jl")
 include("logistic.jl")
+include("mcda.jl")
 
 end
