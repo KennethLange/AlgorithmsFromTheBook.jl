@@ -1,3 +1,5 @@
+export quickselect
+
 """Finds the kth order statistic of a list x by the quick select 
 method. The original x is destroyed in the process."""
 function quickselect(x::Vector, k::Int, left = 1, right = length(x))
@@ -22,13 +24,6 @@ function quickselect(x::Vector, k::Int, left = 1, right = length(x))
   end
   return y
 end 
-
-k = 8;
-x = [5, 4, 3, 1, 2, 8, 7, 6];
-xk = quickselect(x, k)
-k = 5;
-x = ['a', 'c', 'd', 'b', 'f', 'e', 'h', 'g'];
-xk = quickselect(x, k)
 
   
 

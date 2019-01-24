@@ -49,5 +49,6 @@ include("powermod.jl")
 include("prim.jl")
 include("prime_test.jl")
 include("quadratic.jl")
+include("quickselect.jl")
 
 end
