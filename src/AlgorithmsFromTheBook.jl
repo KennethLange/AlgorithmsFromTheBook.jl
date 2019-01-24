@@ -52,5 +52,6 @@ include("quadratic.jl")
 include("quickselect.jl")
 include("quicksort.jl")
 include("rayleigh.jl")
+include("revisedsimplex.jl")
 
 end
