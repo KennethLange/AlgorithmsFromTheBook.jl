@@ -47,5 +47,6 @@ include("peasantproduct.jl")
 include("perfectpower.jl")
 include("powermod.jl")
 include("prim.jl")
+include("prime_test.jl")
 
 end

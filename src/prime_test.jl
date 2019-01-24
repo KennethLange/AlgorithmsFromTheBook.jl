@@ -1,43 +1,45 @@
-"""Computes b^m mod n."""
-function powermod(b::T, m::T, n::T) where T <: Integer
-  if m == zero(T)
-    return one(T)
-  else
-    t = powermod(b, div(m, 2), n)
-    t = t^2
-    if rem(m, 2) == one(T)
-      t = t * b
-    end
-    return rem(t, n)
-  end
-end
+export prime_test
 
-"""Determines whether n is a perfect power."""
-function perfectpower(n::Integer)
-  m = Int(floor(log(2, n))) # log base 2 of n
-  prime_list = eratosthenes(m) 
-  for j in prime_list
-    k = Int(round(n^(1/j)))
-    if isequal(k^j, n)
-      return true
-    end
-  end
-  return false
-end
+# """Computes b^m mod n."""
+# function powermod(b::T, m::T, n::T) where T <: Integer
+#   if m == zero(T)
+#     return one(T)
+#   else
+#     t = powermod(b, div(m, 2), n)
+#     t = t^2
+#     if rem(m, 2) == one(T)
+#       t = t * b
+#     end
+#     return rem(t, n)
+#   end
+# end
 
-"""Delivers all primes <= n."""
-function eratosthenes(n::Integer)
-  isprime = ones(Bool, n)
-  isprime[1] = false
-  for i = 2:round(Int, sqrt(n))
-    if isprime[i]
-      for j = i^2:i:n # all multiples of i < i^2 already composite
-        isprime[j] = false
-      end
-    end
-  end
-  return filter(x -> isprime[x], 1:n)
-end
+# """Determines whether n is a perfect power."""
+# function perfectpower(n::Integer)
+#   m = Int(floor(log(2, n))) # log base 2 of n
+#   prime_list = eratosthenes(m) 
+#   for j in prime_list
+#     k = Int(round(n^(1/j)))
+#     if isequal(k^j, n)
+#       return true
+#     end
+#   end
+#   return false
+# end
+
+# """Delivers all primes <= n."""
+# function eratosthenes(n::Integer)
+#   isprime = ones(Bool, n)
+#   isprime[1] = false
+#   for i = 2:round(Int, sqrt(n))
+#     if isprime[i]
+#       for j = i^2:i:n # all multiples of i < i^2 already composite
+#         isprime[j] = false
+#       end
+#     end
+#   end
+#   return filter(x -> isprime[x], 1:n)
+# end
 
 """Tests whether n is prime by the Miller-Rabin method."""
 function prime_test(n::T, k::Int) where T <: Integer
@@ -68,13 +70,4 @@ function prime_test(n::T, k::Int) where T <: Integer
     end
   end
   return prime = true
-end
-
-import Pkg
-Pkg.add("Primes")
-using Primes
-for i = 1:20
-  n = rand(1:10000)
-  prime = prime_test(n, 20)
-  println(prime," ",isprime(n))
 end
