@@ -1,3 +1,5 @@
+export quicksort
+
 """Sorts the input list x from least to greatest by quicksort."""
 function quicksort(x::Vector, left = 1, right = length(x))
   i = rand(left:right) # select a random splitting value
@@ -18,10 +20,3 @@ function quicksort(x::Vector, left = 1, right = length(x))
     quicksort(x, i + 1, right)
   end
 end 
-
-x = [5, 4, 3, 1, 2, 8, 7, 6, -1];
-quicksort(x)
-println(x)
-x = ['a', 'c', 'd', 'b', 'f', 'e', 'h', 'g', 'y'];
-quicksort(x)
-println(x)
