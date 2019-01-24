@@ -34,5 +34,6 @@ include("householder.jl")
 include("jacobi.jl")
 include("kmeans.jl")
 include("knn.jl")
+include("logistic.jl")
 
 end

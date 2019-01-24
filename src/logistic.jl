@@ -1,3 +1,5 @@
+export logistic
+
 """Performs logistic regression, where X is the design matrix, 
 y is the response vector, n is the number of cases, and p is the 
 number of parameters. """
@@ -43,21 +45,3 @@ function logistic(X::Matrix{T}, y::Vector{T}, tol::T) where T <:Real
   end
   return (beta, 100)
 end
-
-using LinearAlgebra
-using Statistics
-(n, p, tol) = (100, 10, 1e-6);
-(X, y, beta) = (randn(n, p), zeros(n), randn(p));
-fill!(X[:, 1], 1.0); # intercept
-for i = 1:n
-  x = vec(X[i, :])
-  inner = dot(x, beta)
-  if rand() < exp(inner) / (exp(inner) + 1.0)
-    y[i] = 1.0
-  else
-    y[i] = 0.0
-  end
-end
-alpha = copy(beta);
-(beta, iteration) = logistic(X, y, tol);
-println(norm(beta - alpha))
