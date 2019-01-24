@@ -1,3 +1,5 @@
+export quadratic
+
 """ Computes the roots of the quadratic a*x^2+b*x+c when |a|>0."""
 function quadratic(a::T, b::T, c::T) where T <: Real
   d = b^2 - 4a * c
@@ -13,6 +15,3 @@ function quadratic(a::T, b::T, c::T) where T <: Real
     return (-b + sqrt(d + 0im)) / (2a), (-b - sqrt(d + 0im)) / (2a)
   end
 end
-
-(a, b, c) = (1.0, -2.0, 1.0)
-(r1, r2) = quadratic(a, b, c)

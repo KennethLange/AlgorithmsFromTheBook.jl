@@ -48,5 +48,6 @@ include("perfectpower.jl")
 include("powermod.jl")
 include("prim.jl")
 include("prime_test.jl")
+include("quadratic.jl")
 
 end
