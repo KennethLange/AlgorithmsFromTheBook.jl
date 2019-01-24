@@ -1,4 +1,5 @@
 using LinearAlgebra
+export nmf_pg, nmf_mm
 
 """Projects the point y onto the nonengative orthant."""
 function proj_orthant(y::Array{T}) where T <: Real
@@ -47,20 +48,3 @@ function nmf_mm(Y::Matrix{T}, r::Int) where T <: Real
   end
   return (U, V)
 end
-
-"""Compares a projected gradient algorithm and MM algorithm."""
-function compare(m::Int, n::Int, r::Int)
-  U = rand(m, r);
-  V = rand(r, n);
-  Y = U * V;
-  epsilon = 0.0;
-  for k = 1:r
-    @time (U, V) = nmf_pg(Y, k, epsilon);
-    println("rank = ",k," pg loss = ",norm(Y - U * V))
-    @time (U, V) = nmf_mm(Y, k); 
-    println("rank = ",k," mm loss = ",norm(Y - U * V))
-  end
-end
-
-(m, n, r) = (200, 100, 20);
-compare(m, n, r)

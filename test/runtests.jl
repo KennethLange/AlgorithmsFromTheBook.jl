@@ -37,4 +37,4 @@ include("mcmc_hardcore_test.jl")
 include("naiveBayes_test.jl")
 include("negbinomial_test.jl")
 include("newton_test.jl")
-
+include("nmf_test.jl")

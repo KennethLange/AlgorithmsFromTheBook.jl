@@ -41,5 +41,6 @@ include("mcmc_hardcore.jl")
 include("naiveBayes.jl")
 include("negbinomial.jl")
 include("newton.jl")
+include("nmf.jl")
 
 end
