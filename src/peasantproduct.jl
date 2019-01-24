@@ -1,3 +1,5 @@
+export peasantproduct
+
 """ Computes the integer product c = a * b"""
 function peasantproduct(a::T, b::T) where T <: Integer
   c = zero(T)
@@ -11,4 +13,3 @@ function peasantproduct(a::T, b::T) where T <: Integer
   return c + b
 end    
 
-c = peasantproduct(10, 33)

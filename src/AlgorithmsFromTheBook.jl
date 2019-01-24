@@ -43,5 +43,6 @@ include("negbinomial.jl")
 include("newton.jl")
 include("nmf.jl")
 include("pagerank.jl")
+include("peasantproduct.jl")
 
 end
