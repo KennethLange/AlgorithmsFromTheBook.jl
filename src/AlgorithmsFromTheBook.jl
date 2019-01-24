@@ -37,5 +37,6 @@ include("knn.jl")
 include("logistic.jl")
 include("mcda.jl")
 include("mcmc_coal.jl")
+include("mcmc_hardcore.jl")
 
 end

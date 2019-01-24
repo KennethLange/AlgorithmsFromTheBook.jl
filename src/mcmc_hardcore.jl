@@ -1,4 +1,4 @@
-using StatsBase
+export mcmc_hardcore
 
 """Implements MCMC sampling for the hardcore model."""
 function mcmc_hardcore(grid::BitArray{2}, trials::Int)
@@ -33,8 +33,3 @@ function mcmc_hardcore(grid::BitArray{2}, trials::Int)
   end
   return sites_occupied
 end
-
-(m, n, trials) = (50, 50, 1000000);
-grid = falses(m, n);
-sites_occupied = mcmc_hardcore(grid, trials);
-describe(sites_occupied[10000:trials])
