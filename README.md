@@ -8,7 +8,7 @@
 AlgorithmsFromTheBook.jl collects the Julia code in Kenneth Lange's book _Algorithms from THE BOOK_. To access the functions in the book, simply install the package in Julia v1.0 or later   
 ```julia
 using Pkg   
-Pkg.clone("https://github.com/Hua-Zhou/AlgorithmsFromTheBook.jl.git")
+Pkg.clone("https://github.com/KennethLange/AlgorithmsFromTheBook.jl.git")
 ```
 For example, to test the Euclid algorithm in Chapter 1,   
 ```julia
