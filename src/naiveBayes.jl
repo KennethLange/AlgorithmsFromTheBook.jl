@@ -1,3 +1,5 @@
+export estimate, predict
+
 """Estimates the prior and conditional probabilities for
 multinomial naive Bayes."""
 function estimate(X::Matrix{Int}, class::Vector{Int}, classes::Int,
@@ -33,11 +35,3 @@ function predict(test_case::Vector{Int}, ln_prior::Vector{T},
   end
   return argmax(ln_posterior)
 end
-
-(features, cases, classes) = (4, 10, 2);
-(max_outcomes, pseudo_obs) = (10, 0.1);
-X = rand(0:max_outcomes, cases, features); # training data
-class = rand(1:classes, cases); # classes of training data
-(ln_prior, ln_cond_prob) = estimate(X, class, classes, pseudo_obs);
-test_case = rand(0:max_outcomes, features); # test data
-test_class = predict(test_case, ln_prior, ln_cond_prob)
