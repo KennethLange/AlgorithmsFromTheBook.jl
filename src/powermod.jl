@@ -1,3 +1,5 @@
+export powermod
+
 """Computes b^m mod n."""
 function powermod(b::T, m::T, n::T) where T <: Integer
   if m == zero(T)
@@ -12,4 +14,3 @@ function powermod(b::T, m::T, n::T) where T <: Integer
   end
 end
 
-powermod(2, 6, 5)
