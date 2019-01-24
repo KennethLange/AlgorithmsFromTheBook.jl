@@ -46,5 +46,6 @@ include("pagerank.jl")
 include("peasantproduct.jl")
 include("perfectpower.jl")
 include("powermod.jl")
+include("prim.jl")
 
 end
