@@ -4,7 +4,7 @@ export MM_ANOVA
 function two_way_ANOVA(Y::Array{T, 3}) where T <: Real
   (i, j, k) = size(Y)
   S = sum(Y, dims = 3)
-  (alpha, beta) = (sum(S, dims = 2), beta = sum(S, dims = 1))
+  (alpha, beta) = (alpha = sum(S, dims = 2), beta = sum(S, dims = 1))
   mu = sum(alpha) / (i * j * k)
   alpha = alpha / (j * k) .- mu
   beta = beta / (i * k) .- mu

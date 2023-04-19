@@ -37,7 +37,7 @@ function analyze_iris_data(epsilon::T, missing_rate::T,
   end
   for r = 1:6 # run MCDA
     imputedclass = mcda(M, deletedclass, classes, r, epsilon);
-    errors = count(class - imputedclass != 0);
+    errors = count(class - imputedclass .!= 0);
     println("rank = ", r," classification_errors = ", errors)
   end
   return nothing
