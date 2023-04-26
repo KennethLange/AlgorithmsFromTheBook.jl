@@ -1,10 +1,11 @@
-using LinearAlgebra, SparseArrays
+using LinearAlgebra, SparseArrays, RDatasets, Statistics
 export mcda
 
 """Performs matrix completion discriminant analysis. M is the sparse
 predictor matrix. Missing entries of class are coded as 0."""
-function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int}, 
+function mcda(M::AbstractMatrix{T}, class::Vector{Int}, 
   classes::Int, r::Int, epsilon::T) where T <: Real
+#
   (cases, features) = size(M)
   vertex = zeros(T, classes, classes - 1)
   (b, c, d) = (classes - 1, sqrt(classes), sqrt(classes - 1))
@@ -36,10 +37,10 @@ function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int},
       (j, k) = i.I
       R[i] = Y[i] - dot(U[j, :], V[:, k])
     end
-    M = (V * V' + epsilon * I) \ V # update U
-    U = R * M' + U * (V * M')
-    loss = sum(abs2, R) # check for convergence
-    if abs(old_loss - loss) < (old_loss + 1.0) * tol
+    Q = (V * V' + epsilon * I) \ V # update U
+    U = R * Q' + U * (V * Q')
+    loss = norm(R)^2 # check for convergence
+    if abs(old_loss - loss) < (old_loss + one(T)) * tol
       break
     end
     old_loss = copy(loss)
@@ -57,3 +58,46 @@ function mcda(M::SparseMatrixCSC{T, Int}, class::Vector{Int},
   end
   return assigned
 end
+
+"""Prepares Fisher's Iris data for analysis."""
+function analyze_iris_data(epsilon::T, missing_rate::T,
+  classes::Int) where T <: Real
+#
+  iris = dataset("datasets", "iris") # R dataset
+  M = Tables.matrix(iris[:, 1:4]) # feature matrix
+  label = iris[:, 5]
+  cases = size(M, 1)
+  class = zeros(Int, cases)
+  for i = 1:cases
+    if label[i] == "setosa"
+      class[i] = 1
+    elseif label[i] == "versicolor"
+      class[i] = 2
+    elseif label[i] == "virginica"
+      class[i] = 3
+    else
+      println("failed label")
+    end
+  end
+  for i in eachindex(M) # randomly delete features
+    if rand() < missing_rate
+      M[i] = 0.0
+    end
+  end
+  M = sparse(M)
+  deletedclass = copy(class)
+  for i = 1:cases # randomly delete classes
+    if rand() < missing_rate
+      deletedclass[i] = 0
+    end
+  end
+  for r = 1:6 # run MCDA for various ranks
+    imputedclass = mcda(M, deletedclass, classes, r, epsilon);
+    errors = count(class .- imputedclass != 0);
+    println("rank = ",r," training errors  = ", errors)
+  end
+  return nothing
+end
+
+(classes, epsilon, missing_rate) = (3, 1e-5, 0.25);
+analyze_iris_data(epsilon, missing_rate, classes) 
