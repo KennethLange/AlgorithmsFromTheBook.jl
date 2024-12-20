@@ -2,7 +2,7 @@ name = "AlgorithmsFromTheBook"
 uuid = "628264c5-7e14-5233-be68-46f57bdd73bf"
 keywords = ["algorithms"]
 author = ["Kenneth Lange <klange@ucla.edu>", "Hua Zhou <huazhou@ucla.edu>"]
-version = "0.0.1"
+version = "0.0.2"
 
 [deps]
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
