@@ -6,7 +6,7 @@ using AlgorithmsFromTheBook, Distances, Random, Test
 Random.seed!(123)
 n = 50;
 X = rand(2, n);
-dist = pairwise(Euclidean(), X);
+dist = pairwise(Euclidean(), X, dims = 2);
 (cost, path) = anneal(dist)
 cost0 = dist[size(dist, 1), 1]
 cost1 = dist[path[size(dist, 1)], path[1]]
