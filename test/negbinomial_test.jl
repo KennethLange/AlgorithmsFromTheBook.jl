@@ -7,11 +7,11 @@ using AlgorithmsFromTheBook, Distributions, Test
 x = rand(NegativeBinomial(r, p), n);
 (p, r) = negbinomial(x);
 obj1 = loglikelihood(NegativeBinomial(r, p), x);
-println("r = ",r," p = ",p," obj = ",obj1);
+# println("r = ",r," p = ",p," obj = ",obj1);
 (avg, ssq) = (mean(x), var(x));
 (p, r) = (avg / ssq, avg^2 / (ssq - avg));
 obj2 = loglikelihood(NegativeBinomial(r, p), x);
-println("r = ",r," p = ",p," obj = ",obj2);
+# println("r = ",r," p = ",p," obj = ",obj2);
 @test obj1 > obj2
 end
 

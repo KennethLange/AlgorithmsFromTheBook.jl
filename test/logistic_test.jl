@@ -18,7 +18,7 @@ for i = 1:n
 end
 alpha = copy(beta);
 (beta, iteration) = logistic(X, y, tol);
-println(norm(beta - alpha))
+# println(norm(beta - alpha))
 @test length(alpha) == length(beta)
 end
 

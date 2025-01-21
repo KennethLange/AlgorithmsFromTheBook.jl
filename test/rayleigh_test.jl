@@ -9,7 +9,7 @@ A = randn(n, n);
 A = A + A';
 v = power_method(A);
 (mu, v) = rayleigh(A, v, tol); # improve the power estimate
-println("error = ", norm(A * v - mu * v), " mu = ",mu)
+# println("error = ", norm(A * v - mu * v), " mu = ",mu)
 @test norm(A * v - mu * v) < 1e-8
 end
 
