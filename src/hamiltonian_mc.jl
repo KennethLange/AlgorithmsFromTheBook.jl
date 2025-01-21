@@ -1,6 +1,6 @@
 export hmc, my_load_data
 
-using my_load_data, LinearAlgebra, RDatasets, GLM, Plots, Random
+using LinearAlgebra, RDatasets, GLM, Plots, Random
  
 """Implements leapfrog steps in HMC."""
 function leap_frog(X::Matrix{T}, y::Vector{T}, q::Vector{T}, 
