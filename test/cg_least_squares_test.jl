@@ -1,9 +1,9 @@
-module CdLeastSquaresTest
+module CgLeastSquaresTest
 
 using AlgorithmsFromTheBook, Test, Random, LinearAlgebra,  SparseArrays
 
 
-@testset "karmarkar" begin
+@testset "cg ls" begin
     
   Random.seed!(123)
   (n, p, tol) = (500, 100, 1e-6);

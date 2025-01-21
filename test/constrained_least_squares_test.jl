@@ -2,7 +2,7 @@ module LinearAlgebra
 
 using Test, AlgorithmsFromTheBook, Random
 
-@testset "constrained least squares" begin
+@testset "cons ls" begin
   Random.seed!(123)
   (n, p, s) = (10, 5, 2); # (cases, parameters, constraints)
   A = randn(n, p);

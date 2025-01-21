@@ -2,7 +2,7 @@ module FloydWarshallTest
 
 using Test, AlgorithmsFromTheBook
 
-@testset "Floyd Warshall" begin
+@testset "FloydW" begin
   
   n = 4;
   w = zeros(n, n); # Wikipedia example

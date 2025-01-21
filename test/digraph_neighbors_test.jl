@@ -2,7 +2,7 @@ module DigraphNeighbors
 
 using AlgorithmsFromTheBook, Test
 
-@testset "digraph neighbors" begin
+@testset "dia.neighbors" begin
 
   nodes = 4;
   A = zeros(nodes, nodes);

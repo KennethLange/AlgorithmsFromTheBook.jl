@@ -3,7 +3,7 @@ module KnapsackTest
 using LinearAlgebra, Random, Test, AlgorithmsFromTheBook
 
 
-@testset "karmarkar" begin
+@testset "knapsack" begin
     
   Random.seed!(123)
   (p, trials, c) = (10, 1000000, 2.5);

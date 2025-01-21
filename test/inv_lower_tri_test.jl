@@ -2,7 +2,7 @@ module InvLowerTriTest
 
 using LinearAlgebra, Test, AlgorithmsFromTheBook, Random
 
-@testset "inverts lower triangular" begin
+@testset "inv.lower.tri" begin
     
   Random.seed!(123)
   n = 10;

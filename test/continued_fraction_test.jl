@@ -2,7 +2,7 @@ module ContinuedFraction
 
 using Test, AlgorithmsFromTheBook, Random
 
-@testset "continued fraction" begin
+@testset "cont frac" begin
   (x, h, n) = (complex(3.0), 1.0e-10, 20); # n is a global variable
   (fvalue, df) = dcf(cfexp, x, h, n) # exponential at x 
     

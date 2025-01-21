@@ -1,14 +1,14 @@
 module HamiltonianMCTest
 
-using LinearAlgebra, RDatasets, GLM, Plots, Test, AlgorithmsFromTheBook, Random
+using LinearAlgebra, RDatasets, Plots, Test, AlgorithmsFromTheBook, Random
 
-@testset "hamiltonian mc" begin
+@testset "hamil.mc" begin
     
   Random.seed!(123)
 
   # println("Hamiltonian Monte Carlo", load_data())
   
-  (X, y, q0) = my_load_data(); # load data and compute initial positions
+  (X, y, q0) = load_my_data(); # load data and compute initial positions
   m = ones(length(q0)); # unit masses
   (d, trials, leaps) = (5.0e-2, 100000, 20);
   (H, q, p, acceptance_ratio) = hmc(X, y, q0, m, d, trials, leaps);

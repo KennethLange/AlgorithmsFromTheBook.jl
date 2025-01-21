@@ -2,7 +2,7 @@ module CdLeastSquaresTest
 
 using AlgorithmsFromTheBook, Test, Random, LinearAlgebra
 
-@testset "cd_least_squares" begin
+@testset "cd ls" begin
     
   Random.seed!(123)
   (n, p, tol) = (100, 50, 1.0e-5);
