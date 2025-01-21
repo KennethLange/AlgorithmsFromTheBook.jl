@@ -11,7 +11,7 @@ f = f .+ 0.0*im;
 g = copy(f);
 f = FFT(f, ln, false);
 f = FFT(f, ln, true);
-println(norm(f - g))
+# println(norm(f - g))
 @test norm(f - g) < 1e-8
 end
 

@@ -8,9 +8,9 @@ Random.seed!(123)
 lambda = 5 * rand(p);
 X = rand(Dirichlet(lambda), n);
 lambda1 = fit_mle(Dirichlet, X);
-println("Package estimated parameters = ", lambda1);
+# println("Package estimated parameters = ", lambda1);
 lambda2 = dirichlet(X);
-println("Direct estimated parameters = ", lambda2);
+# println("Direct estimated parameters = ", lambda2);
 @test all(isapprox.(params(lambda1)[1], lambda2; rtol=1e-3))
 end
 

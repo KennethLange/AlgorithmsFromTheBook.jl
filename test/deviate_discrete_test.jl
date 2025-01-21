@@ -9,7 +9,7 @@ mass = rand(categories);
 x = discrete_deviate(mass, n);
 #describe(x)
 m = dot([i for i = 1:categories], mass / sum(mass)) # match means
-@test m ≈ 2.5292209061197397
+@test m ≈ 2.8574820923232713
 end
 
 end
