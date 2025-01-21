@@ -1,5 +1,4 @@
-export hmc, my_load_data
-
+export hmc, load_my_data
 using LinearAlgebra, RDatasets, GLM, Plots, Random
  
 """Implements leapfrog steps in HMC."""
@@ -62,7 +61,7 @@ function hmc(X::Matrix{T}, y::Vector{T}, q0::Vector{T}, m::Vector{T},
 end
 
 """Loads Fisher's iris data from R and performs logistic regression."""
-function my_load_data()
+function load_my_data()
   iris = dataset("datasets", "iris") # R dataset
   iris[:, :Indicator] .= 0.0 # add indicator variable
   for i = 1:size(iris, 1)
