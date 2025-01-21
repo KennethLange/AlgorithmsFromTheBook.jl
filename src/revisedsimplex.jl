@@ -1,5 +1,5 @@
 using LinearAlgebra, SparseArrays
-export revised_simplex, simplex_program
+export simplex_program
 
 """Minimizes c'x subject to Ax = b and x >= 0. B enters
 with the indices of a feasible vertex. The linear program
