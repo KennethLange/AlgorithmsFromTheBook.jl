@@ -2,7 +2,7 @@ module UniqueEntriesTest
 
 using Test, AlgorithmsFromTheBook, Random
 
-@testset "unique entries" begin
+@testset "uni.entries" begin
     
   Random.seed!(123)
   x = ['c', 'b', 'd', 'a', 'c', 'a', 'b'];

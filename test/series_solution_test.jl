@@ -2,7 +2,7 @@ module SeriesSolutionTest
 
 using LinearAlgebra, Random, Test, AlgorithmsFromTheBook
 
-@testset "series solution" begin
+@testset "series.sol" begin
     
   Random.seed!(123)
   (p, d, tol) = (500, 200.0, 1e-10);

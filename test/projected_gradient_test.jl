@@ -2,7 +2,7 @@ module ProjectedGradientTest
 
 using LinearAlgebra
 using Random, Test, AlgorithmsFromTheBook
-@testset "projected gradient" begin
+@testset "project.grad" begin
     
   Random.seed!(123)
   (n, p, r, tol) = (500, 100, 0.5, 1.0e-8);

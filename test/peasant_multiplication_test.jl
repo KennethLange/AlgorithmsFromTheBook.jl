@@ -2,7 +2,7 @@ module PeasantMultiplicationTest
 
 using AlgorithmsFromTheBook, Test
 
-@testset "peasant multiplication" begin
+@testset "peas.multip" begin
     
   c = peasantproduct(10, 33)
 

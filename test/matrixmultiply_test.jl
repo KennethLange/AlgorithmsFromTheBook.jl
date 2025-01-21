@@ -1,4 +1,4 @@
-module MatrixMultiplyTest
+module MatrixMultiplytest
 
 using AlgorithmsFromTheBook, Test, Random, LinearAlgebra
 

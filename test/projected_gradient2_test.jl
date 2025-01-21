@@ -4,7 +4,7 @@ module ProjectedGradient2Test
 
 using LinearAlgebra, ForwardDiff, Test, Random, AlgorithmsFromTheBook
 
-@testset "Projected Gradient 2" begin
+@testset "Project.Grad2" begin
     
   Random.seed!(123)
   (n, p, tol) = (500, 100, 1.0e-8);

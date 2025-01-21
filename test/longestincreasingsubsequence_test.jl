@@ -3,7 +3,7 @@ module LongestIncreasingSubsequenceTest
 using Test, AlgorithmsFromTheBook, Random
 
 
-@testset "Finds the longest increasing subsequence (lis) of the sequence x" begin
+@testset "longest.inc.s" begin
     
   Random.seed!(123)
   x = [2, 6, 3, 4, 1, 2, 9, 5, 8];

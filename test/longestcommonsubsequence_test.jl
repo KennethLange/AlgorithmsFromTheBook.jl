@@ -2,7 +2,7 @@ module LongestCommonSubsequenceTest
 
 using AlgorithmsFromTheBook, Test, Random
 
-@testset "LongestCommonSubsequence" begin
+@testset "LongestCS" begin
     
   Random.seed!(123)
   x = split("AGGTAB", "");

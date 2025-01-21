@@ -2,7 +2,7 @@ module RevisedSimplexTest
 
 using AlgorithmsFromTheBook, SparseArrays, Test
 
-@testset "revised simplex" begin
+@testset "revised.simp" begin
 # c = [-3.0; -2; 0; 0; 0]; # Wikipedia example
 # A = [ 1.0 1 1 0 0; 2 1 0 1 0; 1 0 0 0 1 ];
 # b = [ 40.0; 60; 30];

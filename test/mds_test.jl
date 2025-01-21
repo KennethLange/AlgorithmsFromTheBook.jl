@@ -3,7 +3,7 @@ module MdsTest
 using Distances, LinearAlgebra, Plots, Random, AlgorithmsFromTheBook, Test
 
 
-@testset "multidimensional scaling" begin
+@testset "multiD scaling" begin
     
   Random.seed!(123)
 

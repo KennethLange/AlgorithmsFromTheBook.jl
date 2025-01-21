@@ -3,7 +3,7 @@ module NewtonQuantileTest
 using Distributions, Test, AlgorithmsFromTheBook, Random
 
 
-@testset "newton quantile" begin
+@testset "N quantile" begin
     
   Random.seed!(123)
   
