@@ -1,5 +1,4 @@
-using Distances, Random
-
+using Random
 export anneal
 
 """Solves traveling salesman problem by simulated annealing."""
@@ -34,8 +33,3 @@ function anneal(dist::Matrix{T}) where T <: Real
   end
   return (cost, path)
 end
-
-# n = 50;
-# X = rand(2, n);
-# dist = pairwise(Euclidean(), X, dims = 2);
-# (cost, path) = anneal(dist)

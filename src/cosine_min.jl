@@ -4,7 +4,7 @@ export cosine_min
 function cosine_min(x)
   y = copy(x)
   for n = 0:6
-    println(n,"  ",x,"  ",y)
+    # println(n,"  ",x,"  ",y)
     x = x + sin(x)  # MM update
     y = y - sin(y) / cos(y) # Newton update
   end

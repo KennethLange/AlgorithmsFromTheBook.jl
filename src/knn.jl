@@ -1,5 +1,7 @@
-using Distances, Statistics, StatsBase
 export knn
+
+using Distances, Statistics, StatsBase
+
 
 """Performs k nearest neighbor classification with training data
 Y. The classes should be numbered 1, 2,...""" 
