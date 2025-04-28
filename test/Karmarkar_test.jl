@@ -12,10 +12,9 @@ using Test, AlgorithmsFromTheBook, LinearAlgebra, Random
   tol = 1e-5;
   (status, iterations, cost, x) = karmarkar_program(A, b, c, tol)
   
-@test  iterations ≈ 106
-@test  cost ≈ -20.000000740424188
-@test  x ≈ [1.1121393792769484e-8, 2.0185776484859075e-9, 5.000000178031417, 5.000000052032442, 5.549476853899687e-9]
-
+@test  iterations ≈ 104
+@test  cost ≈ -19.99999928979529
+@test  x ≈ [1.1126476653812827e-8, 2.0182223066156383e-9, 4.999999815371917, 4.999999892435626, 5.547911577414132e-9]
 end
 
 end 

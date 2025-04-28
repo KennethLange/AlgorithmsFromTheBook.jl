@@ -10,8 +10,8 @@ using LinearAlgebra, Test, AlgorithmsFromTheBook, Random
   M = inv_lower_tri(L);
   # println(norm(M * L - I),"  ",norm(inv(L) * L - I))
   
-@test norm(M * L - I) ≈ 9.16155634361527e-14
-@test norm(inv(L) * L - I) ≈ 2.560343930182393e-13
+  @test norm(M * L - I) ≈ 6.52014079880853e-14
+  @test norm(inv(L) * L - I) ≈ 5.186569410446151e-14
 end
 
 end

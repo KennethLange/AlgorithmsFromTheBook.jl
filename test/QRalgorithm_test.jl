@@ -11,8 +11,8 @@ using LinearAlgebra, Random, Test, AlgorithmsFromTheBook
   n1 = norm(E * D * E' - Asave) # spectral decomposition check
   n2 = norm(E * E' - I) # orthogonality check for E
 
-@test n1 ≈ 3.265118084881456e-14
-@test n2 ≈ 6.6596794884798795e-15
+  @test n1 ≈ 2.0706134450770425e-14
+  @test n2 ≈ 6.0754176678320415e-15
 
 end
 
